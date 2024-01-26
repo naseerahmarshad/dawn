@@ -295,6 +295,14 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+
+      {% if template contains 'index' %}
+        your custom script 
+        <div class="homepage">
+          default hai
+        </div>
+      {% endif %}
+
     </main>
 
     {% sections 'footer-group' %}
@@ -342,7 +350,6 @@
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
-        countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
     </script>
 
